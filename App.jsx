@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Cards from './components/Cards';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart'; // Import Cart component
-import Aurat from './components/Aurat';
+import Banner from './components/Banner';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           element={
             <div>
               <Header />
-              <Aurat/>
+              <Banner/>
               <Cards />
             </div>
           }
