@@ -5,18 +5,16 @@ import {
     CardContent,
     Typography,
 } from "@mui/material";
+import Button from "./Button"; // Import the Button component
 
-// import button from './Button';
-import Button from "./Button";
-
-const ProductCard = ({ name, image, price, company }) => {
+const ProductCard = ({ id, name, image, price, company }) => {
     return (
         <Card
             sx={{
                 maxWidth: 300,
                 margin: "20px",
-                border: "2px solid black", // Add a black border
-                height: "100%", // Ensure cards have equal heights
+                border: "2px solid red", // Add a black border
+                height: "200px%", // Ensure cards have equal heights
                 width: "100%", // Ensure cards have equal widths
                 display: "flex", // Flex to control card content alignment
                 flexDirection: "column", // Stack content vertically
@@ -26,7 +24,7 @@ const ProductCard = ({ name, image, price, company }) => {
         >
             <CardMedia
                 component="img"
-                height="200"
+                height="125"
                 image={image}
                 alt="Product Photo"
                 sx={{
@@ -44,7 +42,8 @@ const ProductCard = ({ name, image, price, company }) => {
                 <Typography variant="body2" color="text.secondary">
                     Company: {company}
                 </Typography>
-                <Button />
+                {/* Pass the product ID to the Button component */}
+                <Button productId={id} />
             </CardContent>
         </Card>
     );
@@ -96,6 +95,7 @@ const Cards = () => {
                     {row.map((product) => (
                         <ProductCard
                             key={product.id}
+                            id={product.id} // Pass the product ID
                             image={product.image}
                             name={product.title}
                             price={product.price}
@@ -109,3 +109,4 @@ const Cards = () => {
 };
 
 export default Cards;
+
